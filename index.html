@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bootstrap Site</title>
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+	</head>
+	<body>
+		<h1>Hello-Bootstrap</h1>
+		<div class="container">
+			<h1 class="text-center">Form Data</h1>
+			<div class="row justify-content-center">
+				<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
+					<strong>Teguh Wani Pirooooooo</strong> Berhasil Diinput
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				<div class="col-md-8">
+					<form name="submit-to-google-sheet">
+						<div class="row mt-2">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="nama">Nama Lengkap</label>
+									<input type="text" name="nama" id="nama" class="form-control" required />
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="nik">NIK</label>
+									<input type="text" name="nik" id="nik" class="form-control" minlength="16" maxlength="16" required />
+								</div>
+							</div>
+						</div>
+						<div class="row mt-3">
+							<div class="col-sm-4">
+								<div class="form-group">
+									<label for="kelurahan">Kelurahan:</label>
+									<select class="form-select" id="kelurahan" name="kelurahan" required>
+										<option value="Teluk Lerong Ulu">Teluk Lerong Ulu</option>
+										<option value="Karang Anyar">Karang Anyar</option>
+										<option value="Karang Asam Ilir">Karang Asam Ilir</option>
+										<option value="Karang Asam Ulu">Karang Asam Ulu</option>
+										<option value="Lok Bahu">Lok Bahu</option>
+										<option value="Loa Bakung">Loa Bakung</option>
+										<option value="Loa Buah">Loa Buah</option>
+									</select>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="rt">RT</label>
+									<input type="number" name="rt" id="rt" class="form-control" required />
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="tps">TPS</label>
+									<input type="number" name="tps" id="tps" class="form-control" required />
+								</div>
+							</div>
+						</div>
+						<div class="row my-3">
+							<div class="col-md-4">
+								<div class="form-group">
+									<label for="telp">No.HP/WA</label>
+									<input type="text" name="telp" id="telp" class="form-control" required />
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn-primary">Kirim</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			const scriptURL = "https://script.google.com/macros/s/AKfycbzSzYCmrmmYe5-0xkHR3-v4YRgNsb21IWI6C2SnR74ZZE3X3t7f9dhH4UNZBsr2ZTvl/exec";
+			const form = document.forms["submit-to-google-sheet"];
+			const notif = document.querySelector(".notif");
+
+			form.addEventListener("submit", (e) => {
+				e.preventDefault();
+				notif.classList.toggle("d-none");
+				fetch(scriptURL, {
+					mode: "no-cors",
+					method: "POST",
+					body: new FormData(form),
+				})
+					.then((response) => {
+						form.reset();
+					})
+					.catch((error) => {
+						alert("Gagal");
+					});
+			});
+		</script>
+
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</body>
+</html>
