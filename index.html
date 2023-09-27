@@ -8,68 +8,79 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 	</head>
 	<body>
-		<h1 class="text-center">Form Data</h1>
 		<div class="container">
 			<h1 class="text-center">Form Data</h1>
 			<div class="row justify-content-center">
-				<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
-					<strong>Teguh Wani Pirooooooo</strong> Berhasil Diinput
-					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>
 				<div class="col-md-8">
-					<form name="submit-to-google-sheet">
-						<div class="row mt-2">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="nama">Nama Lengkap</label>
-									<input type="text" name="nama" id="nama" class="form-control" required />
+					<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
+						<strong>Input Berhasil</strong> Data Telah Disimpan
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+					<div class="card">
+						<div class="card-body">
+							<form name="submit-to-google-sheet">
+								<div class="row mt-2">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap" required />
+										</div>
+									</div>
+									<div class="col-md-5">
+										<div class="form-group">
+											<input type="text" name="nik" id="nik" class="form-control" placeholder="NIK" minlength="16" maxlength="16" required />
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="nik">NIK</label>
-									<input type="text" name="nik" id="nik" class="form-control" minlength="16" maxlength="16" required />
+								<div class="row mt-3">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<select class="form-select" id="kelurahan" name="kelurahan" required>
+												<option value="">-Kelurahan-</option>
+												<option value="Teluk Lerong Ulu">Teluk Lerong Ulu</option>
+												<option value="Karang Anyar">Karang Anyar</option>
+												<option value="Karang Asam Ilir">Karang Asam Ilir</option>
+												<option value="Karang Asam Ulu">Karang Asam Ulu</option>
+												<option value="Lok Bahu">Lok Bahu</option>
+												<option value="Loa Bakung">Loa Bakung</option>
+												<option value="Loa Buah">Loa Buah</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<input type="number" name="rt" id="rt" class="form-control" placeholder="RT" required />
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+											<input type="number" name="tps" id="tps" class="form-control" placeholder="TPS" required />
+										</div>
+									</div>
 								</div>
-							</div>
+								<div class="row my-3">
+									<div class="col-md-4">
+										<div class="form-group">
+											<input type="text" name="telp" id="telp" class="form-control" placeholder="Telp/Wa" required />
+										</div>
+									</div>
+									<div class="col-md-4 d-none">
+										<div class="form-group">
+											<!-- Ini adalah elemen input untuk gender -->
+											<input type="text" name="gender" id="gender" class="form-control" placeholder="Gender" required readonly />
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-primary">Kirim</button>
+								</div>
+							</form>
 						</div>
-						<div class="row mt-3">
-							<div class="col-sm-4">
-								<div class="form-group">
-									<label for="kelurahan">Kelurahan:</label>
-									<select class="form-select" id="kelurahan" name="kelurahan" required>
-										<option value="Teluk Lerong Ulu">Teluk Lerong Ulu</option>
-										<option value="Karang Anyar">Karang Anyar</option>
-										<option value="Karang Asam Ilir">Karang Asam Ilir</option>
-										<option value="Karang Asam Ulu">Karang Asam Ulu</option>
-										<option value="Lok Bahu">Lok Bahu</option>
-										<option value="Loa Bakung">Loa Bakung</option>
-										<option value="Loa Buah">Loa Buah</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="rt">RT</label>
-									<input type="number" name="rt" id="rt" class="form-control" required />
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="tps">TPS</label>
-									<input type="number" name="tps" id="tps" class="form-control" required />
-								</div>
-							</div>
+					</div>
+					<!-- <div class="card">
+						<div class="card-body">
+							<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/4f0648c1-8920-43b5-8a16-1a065741603b/page/p_i4xb2yp99c" frameborder="0" style="border: 0" allowfullscreen></iframe>
 						</div>
-						<div class="row my-3">
-							<div class="col-md-4">
-								<div class="form-group">
-									<label for="telp">No.HP/WA</label>
-									<input type="text" name="telp" id="telp" class="form-control" required />
-								</div>
-							</div>
-						</div>
-						<button type="submit" class="btn-primary">Kirim</button>
-					</form>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -80,7 +91,27 @@
 
 			form.addEventListener("submit", (e) => {
 				e.preventDefault();
-				notif.classList.toggle("d-none");
+				//notif.classList.toggle("d-none");
+
+				// Ekstrak gender dari NIK
+				const nik = form.elements["nik"].value;
+				const gender = extractGenderFromNIK(nik);
+
+				// Tampilkan gender dalam notifikasi
+				const notifMessage = gender === "Laki-laki" ? "Laki-laki" : gender === "Perempuan" ? "Perempuan" : "NIK tidak valid";
+				// Tampilkan gender dalam notifikasi jika NIK valid
+				if (gender !== "NIK tidak valid") {
+					notif.classList.toggle("d-none");
+				}
+				if (gender === "NIK tidak valid") {
+					alert(gender);
+					form.reset();
+					return;
+				}
+
+				// Tambahkan gender ke dalam form sebelum mengirimkannya ke spreadsheet
+				form.elements["gender"].value = gender;
+
 				fetch(scriptURL, {
 					mode: "no-cors",
 					method: "POST",
@@ -93,6 +124,23 @@
 						alert("Gagal");
 					});
 			});
+
+			function extractGenderFromNIK(nik) {
+				if (nik.length !== 16) {
+					return "NIK tidak valid";
+				}
+
+				const birthDate = nik.substring(6, 12);
+				const firstDigitOfBirthDate = birthDate.charAt(0);
+
+				if (["0", "1", "2", "3"].includes(firstDigitOfBirthDate)) {
+					return "Laki-laki";
+				} else if (["4", "5", "6", "7"].includes(firstDigitOfBirthDate)) {
+					return "Perempuan";
+				} else {
+					return "NIK tidak valid";
+				}
+			}
 		</script>
 
 		<!-- Option 1: Bootstrap Bundle with Poper -->
