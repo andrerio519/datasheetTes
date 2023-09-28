@@ -1,38 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Input Data</title>
 		<!-- Bootstrap CSS -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 	</head>
 	<body>
 		<div class="container">
-			<h1 class="text-center">Form Data</h1>
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#"><img src="teguh.jpeg" alt="Logo" width="60" height="48" class="d-inline-block align-text-top" /></a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="https://cekdptonline.kpu.go.id" target="_blank">Cek DPT</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="https://lookerstudio.google.com/s/pCqIKNcYxZE" target="_blank">Progress</a>
+							</li>
+						</ul>
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link active" href="#" id="mode-toggle">Mode</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 			<div class="row justify-content-center">
 				<div class="col-md-8">
 					<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
 						<strong>Input Berhasil</strong> Data Telah Disimpan
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>
-					<div class="card">
+					<div class="card mt-5">
+						<div class="card-header">
+							<h1 class="text-center">Form Data</h1>
+						</div>
 						<div class="card-body">
 							<form name="submit-to-google-sheet">
-								<div class="row mt-2">
+								<div class="row mt-3">
 									<div class="col-md-6">
 										<div class="form-group">
 											<input type="text" name="nama" id="nama" class="form-control" placeholder="Nama Lengkap" required />
 										</div>
 									</div>
-									<div class="col-md-5">
+								</div>
+								<div class="row mt-3">
+									<div class="col-md-6">
 										<div class="form-group">
 											<input type="text" name="nik" id="nik" class="form-control" placeholder="NIK" minlength="16" maxlength="16" required />
 										</div>
 									</div>
 								</div>
 								<div class="row mt-3">
-									<div class="col-sm-4">
+									<div class="col-sm-3">
 										<div class="form-group">
 											<select class="form-select" id="kelurahan" name="kelurahan" required>
 												<option value="">-Kelurahan-</option>
@@ -46,14 +74,14 @@
 											</select>
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-2">
 										<div class="form-group">
-											<input type="number" name="rt" id="rt" class="form-control" placeholder="RT" required />
+											<input type="number" name="rt" id="rt" class="form-control" min="1" placeholder="RT" required />
 										</div>
 									</div>
-									<div class="col-md-3">
+									<div class="col-md-2">
 										<div class="form-group">
-											<input type="number" name="tps" id="tps" class="form-control" placeholder="TPS" required />
+											<input type="number" name="tps" id="tps" class="form-control" min="1" placeholder="TPS" required />
 										</div>
 									</div>
 								</div>
@@ -70,80 +98,34 @@
 										</div>
 									</div>
 								</div>
+								<div class="row my-3">
+									<div class="col-sm-3">
+										<div class="form-group">
+											<select class="form-select" id="status" name="status" required>
+												<option value="">-Status-</option>
+												<option value="Calon Pemilih">Calon Pemilih</option>
+												<option value="Saksi">Saksi</option>
+												<option value="Koordinator">Koordinator</option>
+											</select>
+										</div>
+									</div>
+								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary">Kirim</button>
 								</div>
 							</form>
 						</div>
-					</div>
-					<!-- <div class="card">
-						<div class="card-body">
-							<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/4f0648c1-8920-43b5-8a16-1a065741603b/page/p_i4xb2yp99c" frameborder="0" style="border: 0" allowfullscreen></iframe>
+						<div class="card-footer">
+							<h3>#KawalTeguh</h3>
 						</div>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
-		<script>
-			const scriptURL = "https://script.google.com/macros/s/AKfycbzSzYCmrmmYe5-0xkHR3-v4YRgNsb21IWI6C2SnR74ZZE3X3t7f9dhH4UNZBsr2ZTvl/exec";
-			const form = document.forms["submit-to-google-sheet"];
-			const notif = document.querySelector(".notif");
+		<script src="gscript.js"></script>
+		<script src="script.js"></script>
 
-			form.addEventListener("submit", (e) => {
-				e.preventDefault();
-				//notif.classList.toggle("d-none");
-
-				// Ekstrak gender dari NIK
-				const nik = form.elements["nik"].value;
-				const gender = extractGenderFromNIK(nik);
-
-				// Tampilkan gender dalam notifikasi
-				const notifMessage = gender === "Laki-laki" ? "Laki-laki" : gender === "Perempuan" ? "Perempuan" : "NIK tidak valid";
-				// Tampilkan gender dalam notifikasi jika NIK valid
-				if (gender !== "NIK tidak valid") {
-					notif.classList.toggle("d-none");
-				}
-				if (gender === "NIK tidak valid") {
-					alert(gender);
-					form.reset();
-					return;
-				}
-
-				// Tambahkan gender ke dalam form sebelum mengirimkannya ke spreadsheet
-				form.elements["gender"].value = gender;
-
-				fetch(scriptURL, {
-					mode: "no-cors",
-					method: "POST",
-					body: new FormData(form),
-				})
-					.then((response) => {
-						form.reset();
-					})
-					.catch((error) => {
-						alert("Gagal");
-					});
-			});
-
-			function extractGenderFromNIK(nik) {
-				if (nik.length !== 16) {
-					return "NIK tidak valid";
-				}
-
-				const birthDate = nik.substring(6, 12);
-				const firstDigitOfBirthDate = birthDate.charAt(0);
-
-				if (["0", "1", "2", "3"].includes(firstDigitOfBirthDate)) {
-					return "Laki-laki";
-				} else if (["4", "5", "6", "7"].includes(firstDigitOfBirthDate)) {
-					return "Perempuan";
-				} else {
-					return "NIK tidak valid";
-				}
-			}
-		</script>
-
-		<!-- Option 1: Bootstrap Bundle with Poper -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 	</body>
 </html>
