@@ -38,15 +38,15 @@
 			</nav>
 			<div class="row justify-content-center">
 				<div class="col-md-8">
-					<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
-						<strong>Input Berhasil</strong> Data Telah Disimpan
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-					</div>
 					<div class="card mt-5">
 						<div class="card-header">
 							<h1 class="text-center">Form Data</h1>
 						</div>
 						<div class="card-body">
+							<div class="alert alert-success alert-dismissible fade show notif d-none" role="alert">
+								<strong>Input Berhasil</strong> Data Telah Disimpan
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
 							<form name="submit-to-google-sheet">
 								<div class="row mt-3">
 									<div class="col-md-6">
@@ -110,6 +110,24 @@
 												<option value="Saksi">Saksi</option>
 												<option value="Koordinator">Koordinator</option>
 											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row my-3">
+									<div class="col-sm-4">
+										<div class="form-group">
+											<select class="form-select" id="paket" name="paket" required>
+												<option value="">-Dukungan-</option>
+												<option value="DPRD Kota & Provinsi">DPRD Kota & Provinsi</option>
+												<option value="DPRD Kota">DPRD Kota</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row my-3">
+									<div class="col-md-4">
+										<div class="form-group">
+											<input type="text" name="kode_relawan" id="kode_relawan" class="form-control" placeholder="Kode Relawan" required />
 										</div>
 									</div>
 								</div>
